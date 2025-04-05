@@ -1,0 +1,24 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /api
+
+spring:
+    application:
+        name: users-ms
+    datasource:
+        url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:devsu_users_db}
+        username: ${DATABASE_USER:postgres}
+        password: ${DATABASE_PASSWORD:juancuero}
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        generate-ddl: true
+        show-sql: false
+        properties:
+            hibernate:
+                format_sql: true
+                jdbc:
+                    time_zone: America/Bogota
+        hibernate:
+            ddl-auto: create
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
