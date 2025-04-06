@@ -22,3 +22,5 @@ spring:
         hibernate:
             ddl-auto: create
         database-platform: org.hibernate.dialect.PostgreSQLDialect
+    jackson:
+        property-naming-strategy: SNAKE_CASE

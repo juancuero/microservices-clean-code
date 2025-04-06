@@ -13,6 +13,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 @Component
@@ -43,6 +45,10 @@ public class JpaClientQueryAdapter implements ClientQueryRepository {
 
     }
 
+    @Override
+    public Optional<Client> findByUuid(UUID uuid) {
+        return repository.findById(uuid).map(mapper::toDomain);
+    }
 
 
 }
