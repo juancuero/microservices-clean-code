@@ -7,4 +7,5 @@ import java.util.UUID;
 public interface ClientCommandRepository {
     Client save(Client client);
     Client update(UUID uuid, Client client);
+     void delete(UUID uuid);
 }

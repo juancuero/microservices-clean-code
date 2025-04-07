@@ -3,6 +3,7 @@ package com.juancuero.output.jpa.adapter;
 import com.juancuero.model.Client;
 import com.juancuero.output.jpa.entity.ClientEntity;
 import com.juancuero.output.jpa.entity.PersonEntity;
+import com.juancuero.output.jpa.entity.enums.ClientStatus;
 import com.juancuero.output.jpa.mapper.ClientEntityMapper;
 import com.juancuero.output.jpa.repository.ClientJpaRepository;
 import com.juancuero.output.jpa.repository.PersonJpaRepository;
@@ -35,7 +36,6 @@ public class JpaClientCommandAdapter implements ClientCommandRepository {
     @Override
     @Transactional
     public Client update(UUID uuid, Client client) {
-        System.out.println("Lo que llega de estuatus es JpaClientCommandAdapter: "+client.getStatus());
         ClientEntity existingClient = repository.findById(uuid).get();
         mapper.updateClientEntity(client, existingClient);
         PersonEntity personEntity = personRepository.findById(existingClient.getPerson().getUuid()).get();
@@ -43,8 +43,16 @@ public class JpaClientCommandAdapter implements ClientCommandRepository {
         personRepository.save(personEntity);
         existingClient.setPerson(personEntity);
         ClientEntity updatedClient = repository.save(existingClient);
-        System.out.println("actrualiza "+updatedClient.getLastModifiedAt());
         return mapper.toDomain(updatedClient);
+    }
+
+    @Override
+    public void delete(UUID uuid) {
+        ClientEntity existingClient = repository.findById(uuid).get();
+        existingClient.setStatus(ClientStatus.INACTIVE);
+        repository.save(existingClient);
+        repository.deleteById(uuid);
+        personRepository.deleteById(existingClient.getPerson().getUuid());
     }
 
 
