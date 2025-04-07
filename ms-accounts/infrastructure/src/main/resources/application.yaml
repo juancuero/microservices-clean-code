@@ -28,3 +28,8 @@ spring:
         bootstrap-servers: ${KAFKA_BROKER_URL:localhost:9092}
         consumer:
             group-id: "accounts-service-group"
+
+ms:
+    users:
+        name: "ms-users"
+        url: http://localhost:8080

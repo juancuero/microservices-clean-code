@@ -15,6 +15,11 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
+import java.util.List;
+import java.util.UUID;
+import java.util.stream.Collectors;
+
 @Component
 @RequiredArgsConstructor
 public class JpaMovementCommandAdapter implements MovementCommandRepository {
@@ -58,4 +63,6 @@ public class JpaMovementCommandAdapter implements MovementCommandRepository {
         movementEntity.setStatus(MovementStatus.COMPLETED);
         return mapper.toDomain(repository.save(movementEntity));
     }
+
+
 }

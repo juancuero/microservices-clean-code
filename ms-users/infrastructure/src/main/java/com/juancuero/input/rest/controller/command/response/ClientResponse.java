@@ -1,5 +1,7 @@
 package com.juancuero.input.rest.controller.command.response;
 
+import com.juancuero.model.enums.ClientStatus;
+
 import java.time.LocalDateTime;
 
 public record ClientResponse(
@@ -7,7 +9,7 @@ public record ClientResponse(
         String name,
         String identification,
         String phone,
-        String status,
+        ClientStatus status,
         LocalDateTime createdAt,
         LocalDateTime lastModifiedAt
 ) {}

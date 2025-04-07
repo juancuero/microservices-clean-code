@@ -1,6 +1,7 @@
 package com.juancuero.command.create.account;
 
 import com.juancuero.model.Account;
+import com.juancuero.model.AccountThin;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -29,5 +30,7 @@ public interface CreateAccountCommandMapper {
                 command.clientUuid()
         );
     }
+
+    AccountThin toAccountThin(Account account);
 
 }
