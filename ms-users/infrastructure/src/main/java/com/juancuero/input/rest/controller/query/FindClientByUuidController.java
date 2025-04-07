@@ -1,7 +1,7 @@
 package com.juancuero.input.rest.controller.query;
 
 
-import com.juancuero.command.query.findByUuid.FindClientByUuidService;
+import com.juancuero.query.findByUuid.FindClientByUuidService;
 import com.juancuero.input.rest.controller.command.response.ClientResponse;
 import com.juancuero.model.Client;
 import com.juancuero.input.rest.controller.command.mapper.ClientRestMapper;

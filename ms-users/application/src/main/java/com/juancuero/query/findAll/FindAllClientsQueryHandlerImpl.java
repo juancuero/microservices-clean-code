@@ -1,4 +1,4 @@
-package com.juancuero.command.query.findAll;
+package com.juancuero.query.findAll;
 
 import com.juancuero.model.Client;
 import com.juancuero.model.pagination.PageBase;

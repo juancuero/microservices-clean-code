@@ -21,7 +21,7 @@ public class CreateClientController {
 
     @PostMapping
     public ResponseEntity<ClientResponse> create(@Valid @RequestBody CreateClientRequest request) {
-        var createdClient = createClientService.execute(mapper.toCommand(request));
+        var createdClient = createClientService.execute(mapper.toCreateClientCommand(request));
         var response = mapper.toResponse(createdClient);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }

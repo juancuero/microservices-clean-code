@@ -13,9 +13,6 @@ public class ErrorResponseCustom {
 
     private LocalDateTime timestamp;
 
-    public ErrorResponseCustom() {
-        this.timestamp = LocalDateTime.now();
-    }
     public ErrorResponseCustom(String message) {
         this.message = message;
         this.timestamp = LocalDateTime.now();

@@ -1,4 +1,4 @@
-package com.juancuero.command.query.findByUuid;
+package com.juancuero.query.findByUuid;
 
 import com.juancuero.exception.ResourceNotFoundException;
 import com.juancuero.model.Client;

@@ -1,22 +1,19 @@
-package com.juancuero.command.query.findByUuid;
+package com.juancuero.query.findAll;
 
 import com.juancuero.model.Client;
 import com.juancuero.model.pagination.PageBase;
 import com.juancuero.model.pagination.Pagination;
 import com.juancuero.port.input.FindAllClientsQueryHandler;
-import com.juancuero.port.input.FindClientByUuidQueryHandler;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
-
 @Service
 @RequiredArgsConstructor
-public class FindClientByUuidService {
+public class FindAllClientsService {
 
-    private final FindClientByUuidQueryHandler handler;
+    private final FindAllClientsQueryHandler handler;
 
-    public Client execute(UUID uuid) {
-        return handler.execute(uuid);
+    public PageBase<Client> execute(Pagination query) {
+        return handler.execute(query);
     }
 }
