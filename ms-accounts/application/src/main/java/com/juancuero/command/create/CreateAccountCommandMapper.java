@@ -18,6 +18,16 @@ public interface CreateAccountCommandMapper {
             @Mapping(target = "status", expression = "java(com.juancuero.model.enums.AccountStatus.ACTIVE)"),
             @Mapping(target = "clientUuid", source = "clientUuid")
     })
-    Account toAccount(CreateAccountCommand command);
+    Account toAccount(CreateAccountWithNumberCommand command);
+
+    default CreateAccountWithNumberCommand toAccountWithNumber(CreateAccountCommand command, String accountNumber) {
+        return new CreateAccountWithNumberCommand(
+                accountNumber,
+                command.accountType(),
+                command.balance(),
+                command.status(),
+                command.clientUuid()
+        );
+    }
 
 }
