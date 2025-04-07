@@ -24,3 +24,7 @@ spring:
         database-platform: org.hibernate.dialect.PostgreSQLDialect
     jackson:
         property-naming-strategy: SNAKE_CASE
+    kafka:
+        bootstrap-servers: ${KAFKA_BROKER_URL:localhost:9092}
+        consumer:
+            group-id: "users-ms-consumer"
