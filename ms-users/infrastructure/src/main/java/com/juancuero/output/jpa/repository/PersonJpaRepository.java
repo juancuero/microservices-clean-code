@@ -8,5 +8,5 @@ import java.util.UUID;
 
 @Repository
 public interface PersonJpaRepository extends JpaRepository<PersonEntity, UUID> {
-
+    boolean existsByIdentification(String identification);
 }

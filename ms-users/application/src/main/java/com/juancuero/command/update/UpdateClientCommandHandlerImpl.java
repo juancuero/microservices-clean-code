@@ -16,7 +16,6 @@ public class UpdateClientCommandHandlerImpl implements UpdateClientCommandHandle
 
     @Override
     public Client execute(UUID uuid, Client client) {
-        System.out.println("Lo que llega de estuatus es UpdateClientCommandHandlerImpl: "+client.getStatus());
         Client updatedClient = repository.update(uuid,client);
         return updatedClient;
     }

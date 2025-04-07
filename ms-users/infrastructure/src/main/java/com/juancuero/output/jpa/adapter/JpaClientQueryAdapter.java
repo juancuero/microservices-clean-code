@@ -6,6 +6,7 @@ import com.juancuero.model.pagination.Pagination;
 import com.juancuero.output.jpa.entity.ClientEntity;
 import com.juancuero.output.jpa.mapper.ClientEntityMapper;
 import com.juancuero.output.jpa.repository.ClientJpaRepository;
+import com.juancuero.output.jpa.repository.PersonJpaRepository;
 import com.juancuero.port.output.ClientQueryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 public class JpaClientQueryAdapter implements ClientQueryRepository {
 
     private final ClientJpaRepository repository;
+    private final PersonJpaRepository personRepository;
     private final ClientEntityMapper mapper;
 
     @Override
@@ -48,6 +50,11 @@ public class JpaClientQueryAdapter implements ClientQueryRepository {
     @Override
     public Optional<Client> findByUuid(UUID uuid) {
         return repository.findById(uuid).map(mapper::toDomain);
+    }
+
+    @Override
+    public boolean exitsByIdentification(String identification) {
+        return personRepository.existsByIdentification(identification);
     }
 
 

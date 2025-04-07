@@ -10,4 +10,5 @@ import java.util.UUID;
 public interface ClientQueryRepository {
     PageBase<Client> findAll(Pagination pagination);
     Optional<Client> findByUuid(UUID uuid);
+    boolean exitsByIdentification(String identification);
 }
