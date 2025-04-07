@@ -1,8 +1,8 @@
 package com.juancuero.input.kafka;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.juancuero.command.create.CreateAccountCommand;
-import com.juancuero.command.create.CreateAccountService;
+import com.juancuero.command.create.account.CreateAccountCommand;
+import com.juancuero.command.create.account.CreateAccountService;
 import com.juancuero.model.AccountCreationEvent;
 import com.juancuero.model.enums.AccountStatus;
 import lombok.RequiredArgsConstructor;

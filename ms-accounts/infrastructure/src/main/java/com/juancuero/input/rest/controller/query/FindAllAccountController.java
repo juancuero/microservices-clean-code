@@ -1,7 +1,7 @@
 package com.juancuero.input.rest.controller.query;
 
-import com.juancuero.input.rest.controller.command.mapper.AccountRestMapper;
-import com.juancuero.input.rest.controller.command.response.AccountResponse;
+import com.juancuero.input.rest.controller.command.account.mapper.AccountRestMapper;
+import com.juancuero.input.rest.controller.command.account.response.AccountResponse;
 import com.juancuero.model.Account;
 import com.juancuero.model.pagination.PageBase;
 import com.juancuero.model.pagination.Pagination;

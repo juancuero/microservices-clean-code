@@ -1,11 +1,12 @@
-package com.juancuero.command.create;
+package com.juancuero.command.create.account;
 
-import com.juancuero.model.enums.AccountType;
 import com.juancuero.model.enums.AccountStatus;
+import com.juancuero.model.enums.AccountType;
 
 import java.util.UUID;
 
-public record CreateAccountCommand(
+public record CreateAccountWithNumberCommand(
+        String accountNumber,
         AccountType accountType,
         double balance,
         AccountStatus status,

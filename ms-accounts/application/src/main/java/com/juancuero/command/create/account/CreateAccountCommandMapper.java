@@ -1,4 +1,4 @@
-package com.juancuero.command.create;
+package com.juancuero.command.create.account;
 
 import com.juancuero.model.Account;
 import org.mapstruct.Mapper;

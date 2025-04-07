@@ -1,9 +1,9 @@
-package com.juancuero.input.rest.controller.command;
+package com.juancuero.input.rest.controller.command.account;
 
-import com.juancuero.command.create.CreateAccountService;
-import com.juancuero.input.rest.controller.command.mapper.AccountRestMapper;
-import com.juancuero.input.rest.controller.command.request.CreateAccountRequest;
-import com.juancuero.input.rest.controller.command.response.AccountResponse;
+import com.juancuero.command.create.account.CreateAccountService;
+import com.juancuero.input.rest.controller.command.account.mapper.AccountRestMapper;
+import com.juancuero.input.rest.controller.command.account.request.CreateAccountRequest;
+import com.juancuero.input.rest.controller.command.account.response.AccountResponse;
 import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

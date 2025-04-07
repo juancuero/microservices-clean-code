@@ -1,4 +1,4 @@
-package com.juancuero.input.rest.controller.command.response;
+package com.juancuero.input.rest.controller.command.account.response;
 
 import java.time.LocalDateTime;
 import com.juancuero.model.enums.AccountType;

@@ -1,5 +1,4 @@
-package com.juancuero.input.rest.controller.command.request;
-
+package com.juancuero.input.rest.controller.command.account.request;
 
 import com.juancuero.model.enums.AccountType;
 import jakarta.validation.constraints.NotBlank;
