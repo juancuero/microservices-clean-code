@@ -32,50 +32,51 @@ Los microservicios se implementaron con una arquitectura **RESTful** y utilizan 
 
 Se desarrolló una funcionalidad para la creación de un cliente, donde el servicio expone un endpoint que permite recibir los datos del cliente, validarlos, y luego persistir la información en la base de datos. Al completar la creación, se genera un evento de **Kafka** para la creación de una cuenta asociada al cliente.
 
-`screenshots/F1.png`
 
-`screenshots/F1.1.png`
+![F1](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F1.png)
 
-`screenshots/F1.2.png`
+![F1.1](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F1.1.png)
 
-`screenshots/F1.3.png`
+![F1.2](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F1.2.png)
 
-`screenshots/F1.4.png`
+![F1.3](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F1.3.png)
 
-`screenshots/F1.5.png`
+![F1.4](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F1.4.png)
 
-`screenshots/F1.6.png`
+![F1.5](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F1.5.png)
 
-
-### F2: 
-
-`screenshots/F2.png`
+![F1.6](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F1.6.png)
 
 
-### F3: 
 
-`screenshots/F3.png`
+### F2:
 
-### F4: 
+![F2](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F2.png)
 
-`screenshots/F4.png`
+### F3:
 
-### F5: 
+![F3](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F3.png)
 
-`screenshots/F5.png`
+### F4:
 
-### F6: 
+![F4](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F4.png)
 
-`screenshots/F6.png`
+### F5:
 
-### F7: 
+![F5](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F5.png)
 
-`screenshots/F7.png`
+### F6:
+
+![F6](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F6.png)
+
+### F7:
+
+![F7](https://raw.githubusercontent.com/juancuero/microservices-clean-code/main/screenshots/F7.png)
 
 
 ## Despliegue
 
-
+```bash
 git clone <url-del-repositorio>
 cd <directorio-raiz>
 docker-compose -f dev-stack.yaml up -d --build
