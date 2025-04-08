@@ -58,6 +58,5 @@ services:
   ###############################################################
 
 networks:
-
   dev-net:
-    driver: bridge
+    external: true

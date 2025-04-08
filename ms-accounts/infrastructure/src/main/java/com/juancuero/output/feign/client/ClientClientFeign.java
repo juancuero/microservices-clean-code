@@ -10,6 +10,6 @@ import java.util.UUID;
 @FeignClient(name = "${ms.users.name}", url = "${ms.users.url}")
 public interface ClientClientFeign {
 
-    @GetMapping("/api/clients/{uuid}")
+    @GetMapping("/api/clientes/{uuid}")
     ResponseEntity<ClientThin> getClientByUuid(@PathVariable("uuid") UUID uuid);
 }

@@ -29,12 +29,15 @@ public class CreateClientService {
 
         Client createdClient = handler.execute(client);
 
-        AccountCreationEvent accountCreationEvent = new AccountCreationEvent(
-                createdClient.getUuid(),
-               AccountType.SAVINGS
-        );
-
-        clientProducer.dispatchAccountCreationEvent(accountCreationEvent);
+        try {
+            AccountCreationEvent accountCreationEvent = new AccountCreationEvent(
+                    createdClient.getUuid(),
+                    AccountType.SAVINGS
+            );
+            clientProducer.dispatchAccountCreationEvent(accountCreationEvent);
+        } catch (Exception e) {
+            System.err.println("Error enviando evento a Kafka: " + e.getMessage());
+        }
 
         return createdClient;
     }

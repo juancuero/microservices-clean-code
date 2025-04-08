@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("accounts")
+@RequestMapping("cuentas")
 @AllArgsConstructor
 public class FindAllAccountController {
 

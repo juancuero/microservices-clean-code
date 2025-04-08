@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  accounts-db:
+    image: postgres:15-alpine
+    container_name: accounts-db
+    env_file: .env
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      TZ: ${TZ}
+    volumes:
+      - accounts-db-data:/var/lib/postgresql/data
+    ports:
+      - "5434:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - dev-net
+
+  accounts-ms:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: accounts-ms
+    env_file: .env
+    depends_on:
+      accounts-db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/${POSTGRES_DB}
+      SPRING_DATASOURCE_USERNAME: ${POSTGRES_USER}
+      SPRING_DATASOURCE_PASSWORD: ${POSTGRES_PASSWORD}
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      SPRING_PROFILES_ACTIVE: ${SPRING_PROFILES_ACTIVE}
+    ports:
+      - "8081:8080"
+    networks:
+      - dev-net
+
+volumes:
+  accounts-db-data:
+
+networks:
+  dev-net:
+    external: true

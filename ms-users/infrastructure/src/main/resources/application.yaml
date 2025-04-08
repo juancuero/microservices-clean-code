@@ -7,9 +7,9 @@ spring:
     application:
         name: users-ms
     datasource:
-        url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${DATABASE_NAME:devsu_users_db}
-        username: ${DATABASE_USER:postgres}
-        password: ${DATABASE_PASSWORD:juancuero}
+        url: jdbc:postgresql://${DATABASE_HOST:localhost}:${DATABASE_PORT:5432}/${POSTGRES_DB:devsu_users_db}
+        username: ${POSTGRES_USER:postgres}
+        password: ${POSTGRES_PASSWORD:juancuero}
         driver-class-name: org.postgresql.Driver
     jpa:
         generate-ddl: true
